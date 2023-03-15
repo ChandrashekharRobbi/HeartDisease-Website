@@ -1,0 +1,15 @@
+<!-- predict.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <title>Heart Disease Prediction</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Heart Disease Prediction</h1>
+    <p>The probability of heart disease is: {{ probability|round(2) }}%</p>
+  </div>
+</body>
+</html>

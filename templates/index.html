@@ -1,0 +1,91 @@
+<html>
+<head>
+  <title>Heart Disease Prediction</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <div class="container">
+  <h1>Heart Disease Prediction</h1>
+  <form action="/predict" method="post">
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age"><br><br>
+  
+    <label for="sex" class="label__heading">Sex:</label><br>
+    <input type="radio" id="sex-male" name="sex" value="1">
+    <label for="sex-male">Male</label><br>
+    <input type="radio" id="sex-female" name="sex" value="0">
+    <label for="sex-female">Female</label><br><br>
+  
+    <label for="cp" class="label__heading">Chest Pain Type:</label><br>
+    <select id="cp" name="cp">
+      <option value="0">Typical Angina</option>
+      <option value="1">Atypical Angina</option>
+      <option value="2">Non-anginal Pain</option>
+      <option value="3">Asymptomatic</option>
+    </select><br><br>
+  
+    <label for="trestbps" class="label__heading">Resting Blood Pressure (in mm Hg):</label>
+    <input type="number" id="trestbps" name="trestbps"><br><br>
+  
+    <label for="chol" class="label__heading">Serum Cholestoral (in mg/dl):</label>
+    <input type="number" id="chol" name="chol"><br><br>
+  
+    <label for="fbs" class="label__heading">Fasting Blood Sugar:</label><br>
+    <input type="radio" id="fbs-true" name="fbs" value="1">
+    <label for="fbs-true">True</label><br>
+    <input type="radio" id="fbs-false" name="fbs" value="0">
+    <label for="fbs-false">False</label><br><br>
+  
+    <label for="restecg" class="label__heading">Resting Electrocardiographic Results:</label><br>
+    <input type="radio" id="restecg-normal" name="restecg" value="0">
+    <label for="restecg-normal">Normal</label><br>
+    <input type="radio" id="restecg-ST-T-abnormality" name="restecg" value="1">
+    <label for="restecg-ST-T-abnormality">ST-T Wave Abnormality</label><br>
+    <input type="radio" id="restecg-left-ventricular-hypertrophy" name="restecg" value="2">
+    <label for="restecg-left-ventricular-hypertrophy">Left Ventricular Hypertrophy</label><br><br>
+  
+    <label for="thalach" class="label__heading">Maximum Heart Rate Achieved:</label>
+    <input type="number" id="thalach" name="thalach"><br><br>
+  
+    <label for="exang" class="label__heading">Exercise Induced Angina:</label><br>
+    <input type="radio" id="exang-yes" name="exang" value="1">
+    <label for="exang-yes">Yes</label><br>
+    <input type="radio" id="exang-no" name="exang" value="0">
+    <label for="exang-no">No</label><br><br>
+  
+    <label for="oldpeak" class="label__heading">ST Depression Induced by Exercise Relative to Rest:</label>
+    <input type="number" id="oldpeak" name="oldpeak"><br><br>
+  
+    <label for="slope" class="label__heading">Slope of the Peak Exercise ST Segment:</label><br>
+    <input type="radio" id="slope-upsloping" name="slope" value="1">
+    <label for="slope-upsloping">Upsloping</label><br>
+    <input type="radio" id="slope-flat" name="slope" value="2">
+    <label for="slope-flat">Flat</label><br>
+    <input type="radio" id="slope-downsloping" name="slope" value="3">
+    <label for="slope-downsloping">Downsloping</label><br><br>
+  
+    <label for="ca" class="label__heading">Number of Major Vessels Colored by Fluoroscopy:</label><br>
+    <input type="radio" id="ca-0" name="ca" value="0">
+    <label for="ca-0">0</label><br>
+    <input type="radio" id="ca-1" name="ca" value="1">
+    <label for="ca-1">1</label><br>
+    <input type="radio" id="ca-2" name="ca" value="2">
+    <label for="ca-2">2</label><br>
+    <input type="radio" id="ca-3" name="ca" value="3">
+    <label for="ca-3">3</label><br><br>
+  
+    <label for="thal" class="label__heading">Thalassemia:</label><br>
+    <input type="radio" id="thal-normal" name="thal" value="1">
+    <label for="thal-normal">Normal</label><br>
+    <input type="radio" id="thal-fixed-defect" name="thal" value="2">
+    <label for="thal-fixed-defect">Fixed Defect</label><br>
+    <input type="radio" id="thal-reversable-defect" name="thal" value="3">
+    <label for="thal-reversable-defect">Reversable Defect</label><br><br>
+  
+    <input type="submit" value="Predict">
+  </form>    
+  </div>
+  
+</body>
+</html>
