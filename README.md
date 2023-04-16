@@ -1,1 +1,49 @@
-![Metrics](https://metrics.lecoq.io/ChandrashekharRobbi?template=classic&base.indepth=true&habits=1&followup=1&people=1&achievements=1&leetcode=1&isocalendar=1&base=header%2C%20activity%2C%20community%2C%20repositories%2C%20metadata&base.indepth=true&base.hireable=false&base.skip=false&isocalendar=false&isocalendar.duration=full-year&habits=false&habits.from=200&habits.days=14&habits.facts=true&habits.charts=false&habits.charts.type=classic&habits.trim=false&habits.languages.limit=8&habits.languages.threshold=0%25&followup=false&followup.sections=repositories&followup.indepth=false&followup.archived=true&people=false&people.limit=24&people.identicons=false&people.identicons.hide=false&people.size=28&people.types=followers%2C%20following&people.shuffle=false&achievements=false&achievements.threshold=C&achievements.secrets=true&achievements.display=detailed&achievements.limit=0&leetcode=false&leetcode.user=crobbi&leetcode.sections=solved&leetcode.limit.skills=10&leetcode.limit.recent=2&config.timezone=Asia%2FCalcutta)
+```html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>LeetCode Stats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</head>
+<body>
+    <div class="ui container">
+        <h1 class="ui header">LeetCode Stats</h1>
+        <div class="ui segment">
+            <div class="ui four statistics">
+                <div class="statistic">
+                    <div class="value" id="totalSolved"></div>
+                    <div class="label">Total Solved</div>
+                </div>
+                <div class="statistic">
+                    <div class="value" id="easySolved"></div>
+                    <div class="label">Easy Solved</div>
+                </div>
+                <div class="statistic">
+                    <div class="value" id="mediumSolved"></div>
+                    <div class="label">Medium Solved</div>
+                </div>
+                <div class="statistic">
+                    <div class="value" id="hardSolved"></div>
+                    <div class="label">Hard Solved</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.getJSON("leetcode-stats.json", function(data) {
+                $("#totalSolved").text(data.totalSolved);
+                $("#easySolved").text(data.easySolved);
+                $("#mediumSolved").text(data.mediumSolved);
+                $("#hardSolved").text(data.hardSolved);
+            });
+        });
+    </script>
+</body>
+</html>
+
+```
